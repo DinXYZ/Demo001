@@ -5,7 +5,6 @@ import com.example.demo.metricsAOP.MyCounter;
 import com.example.demo.metricsAOP.MyTimer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Random;
 
@@ -15,7 +14,6 @@ public class MainTest {
     @Autowired
     private MetricsService metricsService;
 
-    @Transactional
     @MyCounter(name = "counter", tags = {"", ""}, step = 2)
     @MyTimer(name = "timer", tags = {"", ""})
     public int does(int i) {
